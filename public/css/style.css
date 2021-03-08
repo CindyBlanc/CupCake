@@ -1,3 +1,7 @@
+@font-face {
+  font-family: "Pacifico";
+  src: url("./public/font/Pacifico-Regular.ttf");
+}
 body {
   background-image: url(../image/bg_ca.jpg);
   background-repeat: no-repeat;
@@ -14,7 +18,7 @@ body nav .nom {
   display: flex;
   justify-content: center;
   margin-bottom: 0;
-  font-size: 60px;
+  font-size: 40px;
 }
 body nav .logo {
   width: 20%;
@@ -27,11 +31,24 @@ body nav .logo img {
 body nav .navbar {
   width: 40%;
 }
-body nav .navbar ul {
+body nav .navbar .bgRose {
+  background-color: #EF86A6;
+  width: 70%;
+  height: 50px;
+  border-radius: 100px 0px 0px 100px;
+  margin-top: 5vh;
+  margin-left: 12vw;
+}
+body nav .navbar .bgRose ul {
   display: flex;
   flex-direction: row;
-  justify-content: flex-end;
+  justify-content: space-around;
   list-style: none;
+}
+body nav .navbar .bgRose ul li {
+  font-size: 20px;
+  margin-right: 2vw;
+  margin-top: 12px;
 }
 
 /*# sourceMappingURL=style.css.map */
