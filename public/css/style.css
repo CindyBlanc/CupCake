@@ -1,0 +1,37 @@
+body {
+  background-image: url(../image/bg_ca.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  margin: 0;
+}
+body nav {
+  display: flex;
+  flex-direction: row;
+}
+body nav .nom {
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0;
+  font-size: 60px;
+}
+body nav .logo {
+  width: 20%;
+  display: flex;
+  justify-content: center;
+}
+body nav .logo img {
+  width: 150px;
+}
+body nav .navbar {
+  width: 40%;
+}
+body nav .navbar ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  list-style: none;
+}
+
+/*# sourceMappingURL=style.css.map */

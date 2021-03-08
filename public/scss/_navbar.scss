@@ -1,0 +1,36 @@
+body{
+    background-image: url(../image/bg_ca.jpg) ;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    margin: 0;
+    nav{
+        display: flex;
+        flex-direction: row;
+        .nom{
+            width: 40%;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 0;
+            font-size: 60px;
+        }
+        .logo{
+            width: 20%;
+            display: flex;
+            justify-content: center;
+            img{
+                width: 150px;
+            }
+        }
+        .navbar{
+            width: 40%;
+            ul{
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-end;
+                list-style: none;
+                
+            }
+        }
+    }
+}
