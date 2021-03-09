@@ -11,17 +11,17 @@
         <div class="containerId">
             <div class="boxArticleId">
                 <div class="nomCupArticleId">
-                    <h2>Nom du CupCake</h2>
+                    <h2>{{ cupcake.nom }}</h2>
                 </div>
                 <div class="imgCupArticleId">
-                    <img src="{{ asset('image/imgArticle/CupCake1.jpg') }}" alt="">
+                    <img src="{{ asset('image/imgArticle/' ~ cupcake.image) }}" alt="">
                 </div>
                 <div class="recetteCupArticleId">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque reiciendis qui id aliquid natus nobis nemo fugiat dicta repudiandae ipsum blanditiis quos doloribus vero expedita sunt ea accusamus, non sequi voluptas odio soluta excepturi quasi. Perferendis, illum repellendus corporis nulla at ea facilis officia, adipisci necessitatibus consequuntur officiis vitae explicabo voluptatem iste voluptates dicta neque voluptate magnam, tempore quos labore quam laborum eius natus. Nam culpa non sed cumque veritatis ex sequi aliquid, assumenda necessitatibus facere, expedita ipsum officiis minima unde magni atque.</p>
-                <p>Incidunt tempora officiis necessitatibus accusantium velit animi ea voluptatem aspernatur voluptatibus quasi architecto, asperiores ducimus maxime! Ad voluptatibus dolor quis quas voluptate totam est quae quia nemo veritatis at molestiae non provident laborum perferendis, natus quod. Praesentium tempore dolorum ullam incidunt, necessitatibus, blanditiis rerum cum magnam quas ratione non asperiores! Voluptate nostrum laborum autem molestiae doloremque! Nostrum, hic.</p>
+                <p>{{ cupcake.ingredient }}</p>
+                <p>{{ cupcake.recette }}</p>
                 </div>
                 <div class="auteurId">
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Neque, sint?</p>
+                <p>Login de l'auteur</p>
                 </div>
             </div>
         </div>

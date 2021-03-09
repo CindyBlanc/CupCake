@@ -66,18 +66,15 @@
                     flex-direction: row;
                     justify-content: space-evenly;
                     list-style: none;
+                    font-size: 25px;
+                    margin: 0 10px 5px 10px;
                     li{
                         margin-right: 2vw;
                         margin-top: 7px;
-                        img{
-                            width: 18px;
-                            margin-top: 4px;
-                        }
                         a{
                             text-decoration: none;
                             color: $bleu;
                         }
-
                     } 
                 }
             }

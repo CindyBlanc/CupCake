@@ -8,137 +8,26 @@
             <a href="{{path('accueil')}}"><i class="fas fa-reply"></i></a>
         </div>
         <h1>Les Cupcakes</h1>
+
+
         <div class="container">
-        <a href="{{path('cupcake_id')}}">
+        
+        {% for cupcake in cupcakes %}
+
+        <a href="{{path('cupcake_id', {'id' : cupcake.id})}}">
             <div class="boxArticle">
                 <div class="nomCupArticle">
-                    <h2>Nom du CupCake1</h2>
+                    <h2>{{ cupcake.nom }}</h2>
                 </div>
                 <div class="imgCupArticle">
-                    <img src="{{ asset('image/imgArticle/CupCake1.jpg') }}" alt="">
+                    <img src="{{ asset('image/imgArticle/' ~ cupcake.image) }}" alt="">
                 </div>
             </div>
         </a>
-        <a href="{{path('cupcake_id')}}">
-            <div class="boxArticle">
-                <div class="nomCupArticle">
-                    <h2>Nom du CupCake</h2>
-                </div>
-                <div class="imgCupArticle">
-                    <img src="{{ asset('image/imgArticle/CupCake1.jpg') }}" alt="">
-                </div>
-            </div>
-        </a>
-        <a href="{{path('cupcake_id')}}">
-            <div class="boxArticle">
-                <div class="nomCupArticle">
-                    <h2>Nom du CupCake</h2>
-                </div>
-                <div class="imgCupArticle">
-                    <img src="{{ asset('image/imgArticle/CupCake1.jpg') }}" alt="">
-                </div>
-            </div>
-        </a>
-        <a href="{{path('cupcake_id')}}">
-            <div class="boxArticle">
-                <div class="nomCupArticle">
-                    <h2>Nom du CupCake</h2>
-                </div>
-                <div class="imgCupArticle">
-                    <img src="{{ asset('image/imgArticle/CupCake1.jpg') }}" alt="">
-                </div>
-            </div>
-        </a>
-        <a href="{{path('accueil')}}">
-            <div class="boxArticle">
-                <div class="nomCupArticle">
-                    <h2>Nom du CupCake</h2>
-                </div>
-                <div class="imgCupArticle">
-                    <img src="{{ asset('image/imgArticle/CupCake1.jpg') }}" alt="">
-                </div>
-            </div>
-        </a>
-        <a href="{{path('accueil')}}">
-            <div class="boxArticle">
-                <div class="nomCupArticle">
-                    <h2>Nom du CupCake</h2>
-                </div>
-                <div class="imgCupArticle">
-                    <img src="{{ asset('image/imgArticle/CupCake1.jpg') }}" alt="">
-                </div>
-            </div>
-        </a>
-        <a href="{{path('accueil')}}">
-            <div class="boxArticle">
-                <div class="nomCupArticle">
-                    <h2>Nom du CupCake</h2>
-                </div>
-                <div class="imgCupArticle">
-                    <img src="{{ asset('image/imgArticle/CupCake1.jpg') }}" alt="">
-                </div>
-            </div>
-        </a>
-        <a href="{{path('accueil')}}">
-            <div class="boxArticle">
-                <div class="nomCupArticle">
-                    <h2>Nom du CupCake</h2>
-                </div>
-                <div class="imgCupArticle">
-                    <img src="{{ asset('image/imgArticle/CupCake1.jpg') }}" alt="">
-                </div>
-            </div>
-        </a>
-        <a href="{{path('accueil')}}">
-            <div class="boxArticle">
-                <div class="nomCupArticle">
-                    <h2>Nom du CupCake</h2>
-                </div>
-                <div class="imgCupArticle">
-                    <img src="{{ asset('image/imgArticle/CupCake1.jpg') }}" alt="">
-                </div>
-            </div>
-        </a>
-        <a href="{{path('accueil')}}">
-            <div class="boxArticle">
-                <div class="nomCupArticle">
-                    <h2>Nom du CupCake</h2>
-                </div>
-                <div class="imgCupArticle">
-                    <img src="{{ asset('image/imgArticle/CupCake1.jpg') }}" alt="">
-                </div>
-            </div>
-        </a>
-        <a href="{{path('accueil')}}">
-            <div class="boxArticle">
-                <div class="nomCupArticle">
-                    <h2>Nom du CupCake</h2>
-                </div>
-                <div class="imgCupArticle">
-                    <img src="{{ asset('image/imgArticle/CupCake1.jpg') }}" alt="">
-                </div>
-            </div>
-        </a>
-        <a href="{{path('accueil')}}">
-            <div class="boxArticle">
-                <div class="nomCupArticle">
-                    <h2>Nom du CupCake</h2>
-                </div>
-                <div class="imgCupArticle">
-                    <img src="{{ asset('image/imgArticle/CupCake1.jpg') }}" alt="">
-                </div>
-            </div>
-        </a>
-        <a href="{{path('accueil')}}">
-            <div class="boxArticle">
-                <div class="nomCupArticle">
-                    <h2>Nom du CupCake</h2>
-                </div>
-                <div class="imgCupArticle">
-                    <img src="{{ asset('image/imgArticle/CupCake1.jpg') }}" alt="">
-                </div>
-            </div>
-        </a>
+
+        {% endfor %}
+
+
 
         </div>
 

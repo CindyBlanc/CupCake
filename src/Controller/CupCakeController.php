@@ -2,9 +2,11 @@
 
 namespace App\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use App\Entity\CupCake;
+use App\Repository\CupCakeRepository;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class CupCakeController extends AbstractController
 {
@@ -21,20 +23,22 @@ class CupCakeController extends AbstractController
     /**
      * @Route("/lescupcakes", name="cupcakes")
      */
-    public function cupcake(): Response
+    public function cupcake(CupCakeRepository $repository): Response
     {
+        $cupcakes = $repository->findAll();
         return $this->render('cup_cake/cupcakes.html.twig', [
-            'controller_name' => 'CupCakeController',
-        ]);
+            'cupcakes'=>$cupcakes,
+            ]);
     }
 
     /**
-     * @Route("/cupcake", name="cupcake_id")
+     * @Route("/cupcake/{id}", name="cupcake_id")
      */
-    public function cupcakeId(): Response
+    public function cupcakeId($id, CupCakeRepository $repository): Response
     {
+        $cupcake = $repository->find($id);
         return $this->render('cup_cake/cupcake_id.html.twig', [
-            'controller_name' => 'CupCakeController',
+            'cupcake'=> $cupcake,
         ]);
     }
 
