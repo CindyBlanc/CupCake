@@ -5,11 +5,23 @@
 {% block body %}
     <section>
         <div class="retour">
-            <a href="{{path('accueil')}}"><i class="fas fa-reply"></i></a>
+            <a href="{{path('dejauncompte')}}"><i class="fas fa-reply"></i></a>
         </div>
-        <h1>Me connecter</h1>
+                <h1>Me connecter</h1>
+
         <div class="formCompte">
-        
+            <div class="formG">
+                <p>Mon Login</p>
+                <input type="text" class="form">
+            </div>
+            <div class="formG">
+                <p>Mon mot de passe</p>
+                <input type="text" class="form">
+            </div>  
+            <div class="formG">
+                <button type="submit"class="btn"> Se connecter </button>
+            </div>
         </div>
+
     </section>
 {% endblock %}

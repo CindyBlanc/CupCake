@@ -9,6 +9,7 @@ body {
   background-size: cover;
   margin: 0;
   font-family: "Pacifico", fantasy;
+  color: #2F5761;
 }
 body nav {
   display: flex;
@@ -19,7 +20,7 @@ body nav .nom {
   display: flex;
   justify-content: center;
   margin-bottom: 0;
-  font-size: 40px;
+  font-size: 50px;
 }
 body nav .logo {
   width: 20%;
@@ -34,26 +35,82 @@ body nav .navbar {
 }
 body nav .navbar .bgRose {
   background-color: #EF86A6;
-  width: 70%;
-  height: 50px;
+  width: 80%;
+  height: 60px;
   border-radius: 100px 0px 0px 100px;
   margin-top: 5vh;
-  margin-left: 15vw;
+  margin-left: 8vw;
 }
 body nav .navbar .bgRose ul {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-evenly;
   list-style: none;
+  margin-right: 2vw;
 }
 body nav .navbar .bgRose ul li {
-  font-size: 20px;
+  font-size: 28px;
   margin-right: 2vw;
-  margin-top: 12px;
+  margin-top: 7px;
 }
 body nav .navbar .bgRose ul li a {
   text-decoration: none;
   color: #2F5761;
+}
+
+body section .container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-row-gap: 5vh;
+  justify-items: center;
+  margin: 5% 10%;
+}
+body section .container .boxArticle {
+  background-color: #73cfd0b6;
+  width: 300px;
+  height: 41vh;
+  text-align: center;
+  border-radius: 170px;
+}
+body section .container .boxArticle .nomCupArticle {
+  padding: 4vh 0 3vh 0;
+}
+body section .container .boxArticle .imgCupArticle img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+}
+body section .container a {
+  text-decoration: none;
+  color: #2F5761;
+}
+body section .containerId {
+  display: flex;
+  justify-content: center;
+}
+body section .containerId .boxArticleId {
+  background-color: #73cfd0b6;
+  width: 40vw;
+  text-align: center;
+  border-radius: 20px;
+  padding: 0 7vw;
+}
+body section .containerId .boxArticleId .nomCupArticleId {
+  padding: 4vh 0 3vh 0;
+}
+body section .containerId .boxArticleId .imgCupArticleId img {
+  width: 400px;
+  object-fit: cover;
+  object-position: center;
+}
+body section .containerId .boxArticleId .recetteCupArticleId {
+  margin-top: 5vh;
+}
+body section .containerId .boxArticleId .auteurId {
+  margin-top: 10vh;
+  text-align: end;
 }
 
 body section .retour {
@@ -91,12 +148,26 @@ body section .formCompte {
   display: flex;
   flex-direction: column;
   margin: 0 30%;
+  font-size: 25px;
+}
+body section .formCompte .formG p {
+  margin: 10px 0;
 }
 body section .formCompte .formG .form {
   background-color: #2F5761;
+  color: white;
+  border-radius: 10px;
+  border: none;
+  padding: 10px;
 }
 body section .formCompte .formG .btn {
   background-color: #EF86A6;
+  padding: 0 10px;
+  border-radius: 10px;
+  margin-top: 2vh;
+  border: none;
+  font-family: "Pacifico";
+  font-size: 25px;
 }
 
 /*# sourceMappingURL=style.css.map */

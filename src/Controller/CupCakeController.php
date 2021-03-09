@@ -19,14 +19,25 @@ class CupCakeController extends AbstractController
     }
 
     /**
-     * @Route("/lescupcakes", name="cupcake")
+     * @Route("/lescupcakes", name="cupcakes")
      */
     public function cupcake(): Response
     {
-        return $this->render('cup_cake/cupcake.html.twig', [
+        return $this->render('cup_cake/cupcakes.html.twig', [
             'controller_name' => 'CupCakeController',
         ]);
     }
+
+    /**
+     * @Route("/cupcake", name="cupcake_id")
+     */
+    public function cupcakeId(): Response
+    {
+        return $this->render('cup_cake/cupcake_id.html.twig', [
+            'controller_name' => 'CupCakeController',
+        ]);
+    }
+
 
     /**
      * @Route("/dejauncompte", name="dejauncompte")

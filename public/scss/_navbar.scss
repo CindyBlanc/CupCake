@@ -5,6 +5,8 @@ body{
     background-size: cover;
     margin: 0;
     font-family: 'Pacifico', fantasy;
+    color: $bleu;
+
     nav{
         display: flex;
         flex-direction: row;
@@ -13,7 +15,7 @@ body{
             display: flex;
             justify-content: center;
             margin-bottom: 0;
-            font-size: 40px;
+            font-size: 50px;
         }
         .logo{
             width: 20%;
@@ -27,25 +29,24 @@ body{
             width: 40%;
             .bgRose{
                 background-color: $rose;
-                width: 70%;
-                height: 50px;
+                width: 80%;
+                height: 60px;
                 border-radius: 100px 0px 0px 100px;
                 margin-top: 5vh;
-                margin-left: 15vw;
+                margin-left: 8vw;
                 ul{
                     display: flex;
                     flex-direction: row;
-                    justify-content: space-around;
+                    justify-content: space-evenly;
                     list-style: none;
+                    margin-right: 2vw;
                     li{
-                        font-size: 20px;
+                        font-size: 28px;
                         margin-right: 2vw;
-                        margin-top: 12px;
+                        margin-top: 7px;
                         a{
                             text-decoration: none;
                             color: $bleu;
-
-
                         }
 
                     }
