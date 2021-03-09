@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Je le connecte{% endblock %}
+    {% block titre %} {% endblock %}
+{% block body %}
+    <section>
+        <div class="retour">
+            <a href="{{path('accueil')}}"><i class="fas fa-reply"></i></a>
+        </div>
+                <h1>M'inscrire</h1>
+
+        <div class="formCompte">
+            <div class="formG">
+                <p>Mon Login</p>
+                <input type="text" class="form">
+            </div>
+            <div class="formG">
+                <p>Mon e-Mail</p>
+                <input type="text" class="form">
+            </div>
+            <div class="formG">
+                <p>Mon mot de passe</p>
+                <input type="text" class="form">
+            </div>
+            <div class="formG">
+                <p>Encore mon mot de passe</p>
+                <input type="text" class="form">
+            </div>   
+            <div class="formG">
+                <input type="submit" value="S'inscrire" class="btn">       
+            </div>
+        </div>
+
+    </section>
+{% endblock %}

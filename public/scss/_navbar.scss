@@ -4,6 +4,7 @@ body{
     background-attachment: fixed;
     background-size: cover;
     margin: 0;
+    font-family: 'Pacifico', fantasy;
     nav{
         display: flex;
         flex-direction: row;
@@ -19,7 +20,7 @@ body{
             display: flex;
             justify-content: center;
             img{
-                width: 150px;
+                width: 200px;
             }
         }
         .navbar{
@@ -30,7 +31,7 @@ body{
                 height: 50px;
                 border-radius: 100px 0px 0px 100px;
                 margin-top: 5vh;
-                margin-left: 12vw;
+                margin-left: 15vw;
                 ul{
                     display: flex;
                     flex-direction: row;
@@ -40,6 +41,13 @@ body{
                         font-size: 20px;
                         margin-right: 2vw;
                         margin-top: 12px;
+                        a{
+                            text-decoration: none;
+                            color: $bleu;
+
+
+                        }
+
                     }
                     
                 }

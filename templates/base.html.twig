@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
         <title>{% block title %}Welcome!{% endblock %}</title>
             <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
         {% block stylesheets %}
         {% endblock %}
         {% block javascripts %}
@@ -20,9 +21,8 @@
             <div class="navbar">
                 <div class="bgRose">
                     <ul>
-                        <li>Les CupCakes</li>
-                        <li>S'incrire</li>
-                        <li>Se connecter</li>
+                        <li><a href="{{path('cupcake')}}"> Les CupCakes </a></li>
+                        <li><a href="{{path('dejauncompte')}}"> Se connecter </a></li>
                     </ul>                
                 </div>
 
