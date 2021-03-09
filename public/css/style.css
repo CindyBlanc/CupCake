@@ -11,29 +11,29 @@ body {
   font-family: "Pacifico", fantasy;
   color: #2F5761;
 }
-body nav {
+body .navbarDesktop {
   display: flex;
   flex-direction: row;
 }
-body nav .nom {
+body .navbarDesktop .nom {
   width: 40%;
   display: flex;
   justify-content: center;
   margin-bottom: 0;
   font-size: 50px;
 }
-body nav .logo {
+body .navbarDesktop .logo {
   width: 20%;
   display: flex;
   justify-content: center;
 }
-body nav .logo img {
+body .navbarDesktop .logo img {
   width: 200px;
 }
-body nav .navbar {
+body .navbarDesktop .navbar {
   width: 40%;
 }
-body nav .navbar .bgRose {
+body .navbarDesktop .navbar .bgRose {
   background-color: #EF86A6;
   width: 80%;
   height: 60px;
@@ -41,21 +41,27 @@ body nav .navbar .bgRose {
   margin-top: 5vh;
   margin-left: 8vw;
 }
-body nav .navbar .bgRose ul {
+body .navbarDesktop .navbar .bgRose ul {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   list-style: none;
   margin-right: 2vw;
 }
-body nav .navbar .bgRose ul li {
-  font-size: 28px;
+body .navbarDesktop .navbar .bgRose ul li {
+  font-size: 24px;
   margin-right: 2vw;
   margin-top: 7px;
 }
-body nav .navbar .bgRose ul li a {
+body .navbarDesktop .navbar .bgRose ul li a {
   text-decoration: none;
   color: #2F5761;
+}
+body .enteteMobile {
+  display: none;
+}
+body .navbarMobile {
+  display: none;
 }
 
 body section .container {
@@ -168,6 +174,73 @@ body section .formCompte .formG .btn {
   border: none;
   font-family: "Pacifico";
   font-size: 25px;
+  color: #2F5761;
+}
+
+@media screen and (max-width: 1203px) {
+  body .navbarDesktop .nom {
+    font-size: 40px;
+  }
+  body .navbarDesktop .navbar .bgRose ul li {
+    font-size: 17px;
+    margin-right: 0;
+    margin-top: 15px;
+  }
+  body section .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media screen and (max-width: 782px) {
+  body .navbarDesktop {
+    display: none;
+  }
+  body .enteteMobile {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+  body .enteteMobile .logoMobile img {
+    width: 200px;
+  }
+  body .enteteMobile .nomMobile p {
+    font-size: 40px;
+    margin: auto;
+  }
+  body .navbarMobile {
+    display: flex;
+    justify-content: flex-end;
+  }
+  body .navbarMobile .bgRoseMobile {
+    background-color: #EF86A6;
+    border-radius: 100px 0px 0px 100px;
+    width: 25vw;
+  }
+  body .navbarMobile .bgRoseMobile ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    list-style: none;
+  }
+  body .navbarMobile .bgRoseMobile ul li {
+    margin-right: 2vw;
+    margin-top: 7px;
+  }
+  body .navbarMobile .bgRoseMobile ul li img {
+    width: 18px;
+    margin-top: 4px;
+  }
+  body .navbarMobile .bgRoseMobile ul li a {
+    text-decoration: none;
+    color: #2F5761;
+  }
+  body section .container {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  body section .formCompte .formG {
+    font-size: 30px;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

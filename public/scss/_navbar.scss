@@ -7,7 +7,7 @@ body{
     font-family: 'Pacifico', fantasy;
     color: $bleu;
 
-    nav{
+    .navbarDesktop{
         display: flex;
         flex-direction: row;
         .nom{
@@ -41,7 +41,7 @@ body{
                     list-style: none;
                     margin-right: 2vw;
                     li{
-                        font-size: 28px;
+                        font-size: 24px;
                         margin-right: 2vw;
                         margin-top: 7px;
                         a{
@@ -55,5 +55,11 @@ body{
             }
 
         }
+    }
+    .enteteMobile{
+        display: none;
+    }
+    .navbarMobile {
+        display: none;
     }
 }
