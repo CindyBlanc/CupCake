@@ -9,18 +9,26 @@
         </div>
                 <h1>Me connecter</h1>
 
+
+
+
         <div class="formCompte">
+        
+    {% if error %}
+            <div>Les informations sont incorrectes</div>
+    {% endif %}
             <div class="formG">
-                <p>Mon Login</p>
-                <input type="text" class="form">
+                <label class="labelBox">Mon Login :</label>
+                <input type="text" required name="_username" class="form">
             </div>
             <div class="formG">
-                <p>Mon mot de passe</p>
-                <input type="text" class="form">
+                <label  class="labelBoxPass">Password :</label>
+                <input type="password" required name="_password" class="form">
             </div>  
             <div class="formG">
-                <button type="submit"class="btn"> Se connecter </button>
+                <input type="submit" value="Se connecter" class="btn">
             </div>
+
         </div>
 
     </section>

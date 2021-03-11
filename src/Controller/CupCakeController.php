@@ -40,6 +40,7 @@ class CupCakeController extends AbstractController
         return $this->render('cup_cake/cupcake_id.html.twig', [
             'cupcake'=> $cupcake,
         ]);
+
     }
 
 

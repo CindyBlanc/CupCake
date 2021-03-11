@@ -10,25 +10,30 @@
                 <h1>M'inscrire</h1>
 
         <div class="formCompte">
+        {{ form_start(form) }}
             <div class="formG">
-                <p>Mon Login</p>
-                <input type="text" class="form">
+                <p>{{ form_label(form.username) }}</p>
+                <div class="form">
+                {{ form_widget(form.username) }}
+                </div> 
+            </div>
+
+            <div class="formG">
+                <p>{{ form_label(form.password) }}</p>
+                <div class="form">
+                {{ form_widget(form.password) }}
+                </div>
             </div>
             <div class="formG">
-                <p>Mon e-Mail</p>
+                <p>{{ form_label(form.verificationPassword) }}</p>
+                <div class="form">
                 <input type="text" class="form">
-            </div>
-            <div class="formG">
-                <p>Mon mot de passe</p>
-                <input type="text" class="form">
-            </div>
-            <div class="formG">
-                <p>Encore mon mot de passe</p>
-                <input type="text" class="form">
+                </div>
             </div>   
             <div class="formG">
                 <button type="submit"class="btn"> S'inscrire </button>
             </div>
+            {{ form_end(form) }}
         </div>
 
     </section>
