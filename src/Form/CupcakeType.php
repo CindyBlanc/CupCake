@@ -3,9 +3,13 @@
 namespace App\Form;
 
 use App\Entity\CupCake;
+use App\Entity\Categorie;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
+
 
 class CupcakeType extends AbstractType
 {
@@ -13,10 +17,13 @@ class CupcakeType extends AbstractType
     {
         $builder
             ->add('nom')
-            ->add('image')
+            ->add('imageFile', FileType::class, ['required'=>false])
             ->add('ingredient')
             ->add('recette')
-        ;
+            ->add('categorie', EntityType::class, [
+                'class'=> Categorie::class, 
+                'choice_label' => 'nom_cat',
+            ]);
     }
 
     public function configureOptions(OptionsResolver $resolver)

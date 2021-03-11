@@ -12,12 +12,13 @@
     <ul>
         <li><a href="{{path('creationCupcake')}}">Ajouter une nouvelle recette</a></li>
     </ul>
-    <div>
+
+    <div class="compteBox">
 
         <table>
         <thead>
             <tr>
-                <td colspan="5">Mes recettes</td>
+                <td colspan="6" class="titreTable" >Mes recettes</td>
             </tr>
             <tr>
                 <td>id</td>
@@ -31,8 +32,8 @@
                 {% for cupcake in cupcakes %}
             <tr>
                 <td>{{ cupcake.id }}</td>
-                <td>auteur</td>
-                <td><img class="imgAdmin" src="{{ asset('image/imgA/' ~ cupcake.image )}}" alt="{{ cupcake.image }}"></td>
+                <td>{{ cupcake.auteur.username }}</td>
+                <td><img class="imgAdmin" src="{{ asset('image/imgArticle/' ~ cupcake.image )}}"></td>
                 <td>{{ cupcake.nom }}</td>
                 <td>
                     <a href="{{path('cupcake_id',{'id' : cupcake.id})}}"><i class="fas fa-eye"></i></a>

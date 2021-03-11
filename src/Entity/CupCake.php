@@ -2,11 +2,16 @@
 
 namespace App\Entity;
 
-use App\Repository\CupCakeRepository;
+use DateTimeInterface;
 use Doctrine\ORM\Mapping as ORM;
+use App\Repository\CupCakeRepository;
+use Symfony\Component\HttpFoundation\File\File;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 /**
  * @ORM\Entity(repositoryClass=CupCakeRepository::class)
+ * @Vich\Uploadable 
  */
 class CupCake
 {
@@ -26,6 +31,13 @@ class CupCake
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $image;
+   
+    /** 
+     * @Vich\UploadableField(mapping="cupcake_image", fileNameProperty="image")
+     * 
+     */
+    private $imageFile;
+
 
     /**
      * @ORM\Column(type="text")
@@ -41,6 +53,20 @@ class CupCake
      * @ORM\ManyToOne(targetEntity=Utilisateur::class, inversedBy="cupCakes")
      */
     private $auteur;
+
+    /**
+     * @ORM\Column(type="datetime")
+     */
+    private $updatedAt;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=Categorie::class, inversedBy="categorie")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $categorie;
+
+    
+
 
     public function getId(): ?int
     {
@@ -70,6 +96,22 @@ class CupCake
 
         return $this;
     }
+
+    public function setImageFile(?File $imageFile = null) : self
+    {
+        $this->imageFile = $imageFile;
+
+        if ($this->imageFile instanceof UploadedFile) {
+            $this->updatedAt = new \DateTime("now");
+        }
+        return $this;
+    }
+
+    public function getImageFile(): ?File
+    {
+        return $this->imageFile;
+    }
+
 
     public function getIngredient(): ?string
     {
@@ -106,4 +148,29 @@ class CupCake
 
         return $this;
     }
+
+    public function getUpdatedAt(): ?\DateTimeInterface
+    {
+        return $this->updatedAt;
+    }
+
+    public function setUpdatedAt(\DateTimeInterface $updatedAt): self
+    {
+        $this->updatedAt = $updatedAt;
+
+        return $this;
+    }
+
+    public function getCategorie(): ?Categorie
+    {
+        return $this->categorie;
+    }
+
+    public function setCategorie(?Categorie $categorie): self
+    {
+        $this->categorie = $categorie;
+
+        return $this;
+    }
+
 }

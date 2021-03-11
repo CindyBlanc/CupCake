@@ -7,12 +7,20 @@ use App\Form\CupcakeType;
 use App\Repository\CupCakeRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Security\Core\Security;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class AdminController extends AbstractController
-{
+{ 
+    private $security;
+
+    public function __construct(Security $security) {
+        $this->security = $security;
+
+    }
+
     /**
      * @Route("/admin", name="admin")
      */
@@ -28,22 +36,26 @@ class AdminController extends AbstractController
      * @Route("/admin/creation", name="creationCupcake")
      * @Route("/admin/cupcake/{id}", name="modificationCupcake", methods="GET|POST")
      */
-    public function ajoutEtModif(CupCake $cupcake = null, Request $request, EntityManagerInterface $entityManager): Response
+    public function action(CupCake $cupcake = null, Request $request, EntityManagerInterface $entityManager): Response
     {  
             if(!$cupcake){
                 $cupcake = new CupCake();
             }
             $form = $this->createForm(CupcakeType::class,$cupcake);
             $form->handleRequest($request);
+
             if($form->isSubmitted() && $form->isValid()){
+                $user=$this->security->getUser();
+                $cupcake->setAuteur($user);
                 $modif = $cupcake->getId() !== null; // On verifie si l'ID existe
+
                 $entityManager->persist($cupcake);
                 $entityManager->flush();
                 $this->addFlash("success", ($modif) ? "La modification a été effectuée" : "L'ajout a été effectuée");
                 // Message a afficher : success. si $modif est vrai (?) alors message (:) sinon ce message
                 return $this->redirectToRoute("admin");
             }
-            return $this->render('admin/ajouter.html.twig', [
+            return $this->render('admin/action.html.twig', [
                 'cupcake'=>$cupcake,
                 'form'=> $form->createView(),
                 "isModification" => $cupcake->getid() !== null

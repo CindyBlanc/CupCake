@@ -14,7 +14,7 @@ class UtilisateurType extends AbstractType
     {
         $builder
             ->add('username')
-            ->add('password')
+            ->add('password', PasswordType::class)
             ->add('verificationPassword', PasswordType::class)
 
         ;

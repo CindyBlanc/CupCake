@@ -13,7 +13,7 @@
     <body>
         <nav class="navbarDesktop">
         <div class="nom">
-            <p>CupCake Addict</p>
+            <a href="{{path('accueil')}}"> CupCake Addict</a>
         </div>
             <div class="logo">
                 <a href="{{path('accueil')}}"><img src="{{ asset('image/Logo.jpg') }}" alt="CupaCake_Addict"></a>
@@ -27,7 +27,7 @@
                         <li><a href="{{path('dejauncompte')}}"> Se connecter </a></li>
                 {% else %}
                         <li><a href="{{path('admin')}}"> Mon compte </a></li>
-                        <li><a href="{{path('deconnexion')}}"> Deconnexion </a></li>
+                        <li><a href="{{path('deconnexion')}}"> Déconnexion </a></li>
                 {% endif %}
 
                     </ul>                
@@ -48,7 +48,12 @@
                 <div class="bgRoseMobile">
                     <ul>
                         <li><a href="{{path('cupcakes')}}"><i class="fas fa-chess-queen"></i></a></li>
+                        {% if not app.user %}
                         <li><a href="{{path('dejauncompte')}}"><i class="fas fa-user"></i></a></li>
+                        {% else %}
+                        <li><a href="{{path('admin')}}"><i class="fas fa-user"></i></a></li>
+                        <li><a href="{{path('deconnexion')}}"><i class="fas fa-sign-out-alt"></i></a></li>
+                        {% endif %}
                     </ul>                
                 </div>
         </nav>

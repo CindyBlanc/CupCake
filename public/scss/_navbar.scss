@@ -16,6 +16,11 @@ body{
             justify-content: center;
             margin-bottom: 0;
             font-size: 50px;
+            a{
+                text-decoration: none;
+                color: $bleu;
+                margin-top: 60px;
+            }
         }
         .logo{
             width: 20%;
@@ -29,11 +34,11 @@ body{
             width: 40%;
             .bgRose{
                 background-color: $rose;
-                width: 80%;
+                width: 90%;
                 height: 60px;
                 border-radius: 100px 0px 0px 100px;
                 margin-top: 60px;
-                margin-left: 8vw;
+                margin-left: 5vw;
                 ul{
                     display: flex;
                     flex-direction: row;
@@ -41,9 +46,8 @@ body{
                     list-style: none;
                     margin-right: 2vw;
                     li{
-                        font-size: 24px;
-                        margin-right: 2vw;
-                        margin-top: 7px;
+                        font-size: 22px;
+                        margin-top: 12px;
                         a{
                             text-decoration: none;
                             color: $bleu;
