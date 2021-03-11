@@ -37,6 +37,11 @@ class CupCake
      */
     private $recette;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=Utilisateur::class, inversedBy="cupCakes")
+     */
+    private $auteur;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -86,6 +91,18 @@ class CupCake
     public function setRecette(string $recette): self
     {
         $this->recette = $recette;
+
+        return $this;
+    }
+
+    public function getAuteur(): ?Utilisateur
+    {
+        return $this->auteur;
+    }
+
+    public function setAuteur(?Utilisateur $auteur): self
+    {
+        $this->auteur = $auteur;
 
         return $this;
     }

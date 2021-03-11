@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\UtilisateurRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Security\Core\User\UserInterface;
@@ -52,6 +54,16 @@ class Utilisateur implements UserInterface
      * 
      */
     private $verificationPassword;
+
+    /**
+     * @ORM\OneToMany(targetEntity=CupCake::class, mappedBy="auteur")
+     */
+    private $cupCakes;
+
+    public function __construct()
+    {
+        $this->cupCakes = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -106,5 +118,35 @@ class Utilisateur implements UserInterface
     public function getRoles() // role qu'on defini par rapport aux users 
     {
         return ['ROLE_USER']; 
+    }
+
+    /**
+     * @return Collection|CupCake[]
+     */
+    public function getCupCakes(): Collection
+    {
+        return $this->cupCakes;
+    }
+
+    public function addCupCake(CupCake $cupCake): self
+    {
+        if (!$this->cupCakes->contains($cupCake)) {
+            $this->cupCakes[] = $cupCake;
+            $cupCake->setAuteur($this);
+        }
+
+        return $this;
+    }
+
+    public function removeCupCake(CupCake $cupCake): self
+    {
+        if ($this->cupCakes->removeElement($cupCake)) {
+            // set the owning side to null (unless already changed)
+            if ($cupCake->getAuteur() === $this) {
+                $cupCake->setAuteur(null);
+            }
+        }
+
+        return $this;
     }
 }

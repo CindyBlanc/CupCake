@@ -49,7 +49,7 @@ class CupCakeController extends AbstractController
      */
     public function redirectionSecu(): Response
     {
-        return $this->render('cup_cake/moncompte.html.twig', [
+        return $this->render('cup_cake/dejauncompte.html.twig', [
             'controller_name' => 'CupCakeController',
         ]);
     }

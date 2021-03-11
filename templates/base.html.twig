@@ -21,8 +21,15 @@
             <div class="navbar">
                 <div class="bgRose">
                     <ul>
+
                         <li><a href="{{path('cupcakes')}}"> Les CupCakes </a></li>
+                {% if not app.user %} 
                         <li><a href="{{path('dejauncompte')}}"> Se connecter </a></li>
+                {% else %}
+                        <li><a href="{{path('admin')}}"> Mon compte </a></li>
+                        <li><a href="{{path('deconnexion')}}"> Deconnexion </a></li>
+                {% endif %}
+
                     </ul>                
                 </div>
 

@@ -48,8 +48,7 @@ class SecuController extends AbstractController
             "lastUsername" => $util->getLastUsername(),
             "error"=> $util->getLastAuthenticationError()
         ]);
-        
-
+        return $this->redirectToRoute("utilisateur");
     }
 
     /**
